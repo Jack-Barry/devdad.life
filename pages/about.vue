@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <h1>{{ welcome_message }}</h1>
+    <div>{{ page_content }}</div>
   </section>
 </template>
 
@@ -11,13 +11,13 @@ import { initApi, generatePageData } from '@/prismic.config'
 export default {
   asyncData(context) {
     if (context.payload) {
-      return generatePageData('home_page', context.payload.data)
+      return generatePageData('about_page', context.payload.data)
     } else {
       return initApi().then(api => {
         return api
-          .query(Prismic.Predicates.at('document.type', 'home_page'))
+          .query(Prismic.Predicates.at('document.type', 'about_page'))
           .then(response => {
-            return generatePageData('home_page', response.results[0].data)
+            return generatePageData('about_page', response.results[0].data)
           })
       })
     }
