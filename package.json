@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "My personal blog",
   "author": "Jack Barry",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jack-Barry/Jack-Barry.github.io"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",
