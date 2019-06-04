@@ -7,21 +7,19 @@
 
 <script>
 import Prismic from 'prismic-javascript'
-import { initApi, generatePageData } from '@/prismic.config'
+import { queryForDocType, generatePageData } from '@/prismic.config'
 
 export default {
-  asyncData(context) {
-    if (context.payload) {
-      return generatePageData('blog_post', context.payload.data)
+  async asyncData({ payload, params }) {
+    let pageData
+
+    if (payload) {
+      pageData = payload.data
     } else {
-      return initApi().then(api => {
-        return api
-          .query(Prismic.Predicates.at('my.blog_post.uid', context.params.slug))
-          .then(response => {
-            return generatePageData('blog_post', response.results[0].data)
-          })
-      })
+      const apiData = await queryForDocType(params.slug, 'my.blog_post.uid')
+      pageData = apiData.results[0].data
     }
+    return generatePageData('blog_post', pageData)
   }
 }
 </script>

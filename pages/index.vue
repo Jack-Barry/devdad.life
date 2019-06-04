@@ -6,21 +6,19 @@
 
 <script>
 import Prismic from 'prismic-javascript'
-import { initApi, generatePageData } from '@/prismic.config'
+import { queryForDocType, generatePageData } from '@/prismic.config'
 
 export default {
-  asyncData(context) {
-    if (context.payload) {
-      return generatePageData('home_page', context.payload.data)
+  async asyncData({ payload }) {
+    let pageData
+
+    if (payload) {
+      pageData = payload.data
     } else {
-      return initApi().then(api => {
-        return api
-          .query(Prismic.Predicates.at('document.type', 'home_page'))
-          .then(response => {
-            return generatePageData('home_page', response.results[0].data)
-          })
-      })
+      const apiData = await queryForDocType('home_page')
+      pageData = apiData.results[0].data
     }
+    return generatePageData('home_page', pageData)
   }
 }
 </script>

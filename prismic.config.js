@@ -13,9 +13,10 @@ export const initApi = req => {
   })
 }
 
-export const linkResolver = doc => {
-  if (doc.type === 'blog_post') return `/blog/${doc.uid}`
-  return `/${doc.uid}`
+export const queryForDocType = async (docType, predicate = 'document.type') => {
+  const data = await initApi()
+  const queried = await data.query(Prismic.Predicates.at(predicate, docType))
+  return queried
 }
 
 export const generatePageData = (documentType, data) => {
