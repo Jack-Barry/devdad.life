@@ -27,7 +27,7 @@ export const generatePageData = (documentType, data) => {
       }
     case 'about_page':
       return {
-        page_content: PrismicDOM.RichText.asText(data.page_content)
+        page_content: PrismicDOM.RichText.asHtml(data.page_content)
       }
     case 'blog_page':
       return {

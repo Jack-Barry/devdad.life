@@ -4,7 +4,7 @@
       <h1>Who is Jack Barry?</h1>
       <p>(According to Jack Barry)</p>
     </header>
-    <section class="page-content">{{ page_content }}</section>
+    <section class="page-content" v-html="page_content"/>
   </main>
 </template>
 
