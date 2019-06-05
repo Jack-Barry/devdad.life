@@ -1,7 +1,12 @@
 <template>
-  <section class="container">
-    <h1>{{ welcome_message }}</h1>
-  </section>
+  <main>
+    <div class="full-screen">
+      <header>
+        <h1>{{ welcome_message }}</h1>
+      </header>
+    </div>
+    <section class="page-content"></section>
+  </main>
 </template>
 
 <script>
@@ -22,3 +27,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '~assets/variables.scss';
+
+.full-screen {
+  height: calc(100vh - 3rem);
+  display: grid;
+  align-items: center;
+}
+</style>

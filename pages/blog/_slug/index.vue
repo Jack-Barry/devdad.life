@@ -1,8 +1,10 @@
 <template>
-  <div class="container">
-    <h1>{{ post_title }}</h1>
-    <div>{{ post_content }}</div>
-  </div>
+  <main>
+    <header>
+      <h1>{{ post_title }}</h1>
+    </header>
+    <section class="page-content" v-html="post_content"></section>
+  </main>
 </template>
 
 <script>

@@ -1,0 +1,62 @@
+<template>
+  <div class="blog-post-preview-wrapper">
+    <div class="blog-post-preview">
+      <h3>
+        <nuxt-link :to="`/blog/${post.uid}`">{{ Dom.RichText.asText(post.data.post_title) }}</nuxt-link>
+      </h3>
+      <div>
+        <span v-for="tag in post.tags" :key="tag" class="blog-post-tag">{{ tag }}</span>
+      </div>
+      <p>{{ Dom.RichText.asText(post.data.post_content).replace(/^(.{200}[^\s]*).*/, "$1")}}...</p>
+    </div>
+  </div>
+</template>
+
+<script>
+import PrismicDOM from 'prismic-dom'
+
+export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      Dom: PrismicDOM
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+@import '~assets/variables.scss';
+
+.blog-post-preview-wrapper {
+  padding: 0 3rem;
+  display: grid;
+  justify-content: center;
+}
+
+.blog-post-preview {
+  max-width: 40rem;
+  padding: 1rem 0;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+.blog-post-tag {
+  display: inline-block;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  background-color: $pale-gray;
+  border-radius: 2em;
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+</style>

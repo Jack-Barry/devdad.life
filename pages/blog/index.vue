@@ -1,28 +1,21 @@
 <template>
-  <div class="container">
-    <h1>Blog page</h1>
-    <hr>
-    <article class="post" v-for="(post, index) in posts" :key="index">
-      <header>
-        <h1>
-          <nuxt-link :to="`/blog/${post.uid}`">{{ Dom.RichText.asText(post.data.post_title) }}</nuxt-link>
-        </h1>
-      </header>
-    </article>
-  </div>
+  <main>
+    <header>
+      <h1>Blog</h1>
+    </header>
+    <div v-for="(post, index) in posts" :key="index">
+      <blog-preview :post="post"/>
+    </div>
+  </main>
 </template>
 
 <script>
 import Prismic from 'prismic-javascript'
-import PrismicDOM from 'prismic-dom'
 import { queryForDocType, generatePageData } from '@/prismic.config'
+import BlogPreview from '../../components/BlogPreview.vue'
 
 export default {
-  data() {
-    return {
-      Dom: PrismicDOM
-    }
-  },
+  components: { BlogPreview },
   async asyncData({ payload }) {
     let pageData
 

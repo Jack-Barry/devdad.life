@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300i,400,600|Playfair+Display:700&display=swap');
+@import './variables.scss';
+
+body {
+  font-family: $main-font;
+  font-size: $root-font-size;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-color-dark;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headings-font;
+  margin: 0;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+header {
+  padding: 4.5rem 0;
+  text-align: center;
+}
+
+main {
+  padding: 3rem 0 0;
+}
+
+.page-content {
+  padding: 0 3rem 6rem;
+  margin: auto;
+  max-width: 45rem;
+}

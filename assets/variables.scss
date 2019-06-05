@@ -1,0 +1,26 @@
+$root-font-size: 18px;
+$main-font: 'Montserrat', sans-serif;
+$headings-font: 'Playfair Display', serif;
+$h1-font-size: 2.8 * $root-font-size;
+$h2-font-size: 2.3 * $root-font-size;
+$h3-font-size: 1.9 * $root-font-size;
+$h4-font-size: 1.6 * $root-font-size;
+$h5-font-size: 1.4 * $root-font-size;
+$h6-font-size: 1.3 * $root-font-size;
+
+// Base Colors
+$red: #ff3d32;
+$orange: #ff8426;
+$yellow: #ffcd28;
+$green: #21ff84;
+$blue: #3a93ff;
+$purple: #9169ce;
+$gray: #c9c9c9;
+$pale-gray: lighten($gray, 17%);
+
+// Theme Colors
+$primary-color: $blue;
+$primary-color-darker: darken($primary-color, 30%);
+$primary-color-dark: darken($primary-color, 20%);
+$primary-color-pale: lighten($primary-color, 20%);
+$primary-color-paler: lighten($primary-color, 37%);
