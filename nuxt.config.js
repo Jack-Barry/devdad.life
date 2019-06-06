@@ -6,6 +6,11 @@ import { queryForDocType } from './prismic.config'
 export default {
   mode: 'universal',
 
+  env: {
+    PRISMIC_API_URL: process.env.PRISMIC_API_URL,
+    PRISMIC_API_KEY: process.env.PRISMIC_API_KEY
+  },
+
   /*
    ** Headers of the page
    */
