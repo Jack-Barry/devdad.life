@@ -5,6 +5,7 @@
         <nuxt-link :to="`/blog/${post.uid}`">{{ Dom.RichText.asText(post.data.post_title) }}</nuxt-link>
       </h3>
       <div>
+        <date-time-stamp :date="post.first_publication_date"/>
         <span v-for="tag in post.tags" :key="tag" class="blog-post-tag">{{ tag }}</span>
       </div>
       <p>{{ Dom.RichText.asText(post.data.post_content).replace(/^(.{200}[^\s]*).*/, "$1")}}...</p>
@@ -14,8 +15,10 @@
 
 <script>
 import PrismicDOM from 'prismic-dom'
+import DateTimeStamp from './DateTimeStamp.vue'
 
 export default {
+  components: { DateTimeStamp },
   props: {
     post: {
       type: Object,
@@ -54,9 +57,15 @@ export default {
   font-size: 0.75rem;
   background-color: $pale-gray;
   border-radius: 2em;
+  transition-duration: 0.3s;
 
   &:not(:last-child) {
     margin-right: 0.5rem;
+  }
+
+  &:hover {
+    background-color: $gray;
+    color: $white;
   }
 }
 </style>

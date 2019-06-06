@@ -1,8 +1,5 @@
 <template>
   <nav>
-    <div>
-      <nuxt-link to="/"></nuxt-link>
-    </div>
     <ul>
       <li>
         <nuxt-link to="/">Home</nuxt-link>
@@ -18,11 +15,13 @@
 </template>
 
 <style lang="scss">
+@import '~assets/variables.scss';
+
 nav {
   position: fixed;
   display: grid;
   width: 100%;
-  grid-template-columns: auto 1fr;
+  background: rgba(255, 255, 255, 0.9);
 
   ul {
     display: flex;
@@ -38,6 +37,11 @@ nav {
         width: 100%;
         line-height: 3rem;
         text-align: center;
+
+        &:hover {
+          background: $primary-color;
+          color: $white;
+        }
       }
     }
   }

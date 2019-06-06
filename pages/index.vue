@@ -5,7 +5,6 @@
         <h1>{{ welcome_message }}</h1>
       </header>
     </div>
-    <section class="page-content"></section>
   </main>
 </template>
 
