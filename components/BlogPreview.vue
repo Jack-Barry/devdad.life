@@ -8,7 +8,7 @@
         <date-time-stamp :date="post.first_publication_date"/>
         <span v-for="tag in post.tags" :key="tag" class="blog-post-tag">{{ tag }}</span>
       </div>
-      <p>{{ Dom.RichText.asText(post.data.post_content).replace(/^(.{200}[^\s]*).*/, "$1")}}...</p>
+      <p>{{ previewText }}</p>
     </div>
   </div>
 </template>
@@ -28,6 +28,14 @@ export default {
   data() {
     return {
       Dom: PrismicDOM
+    }
+  },
+  computed: {
+    previewText() {
+      const text = PrismicDOM.RichText.asText(
+        this.$props.post.data.post_content
+      )
+      return `${text.substr(0, text.lastIndexOf(' ', 200))}...`
     }
   }
 }
