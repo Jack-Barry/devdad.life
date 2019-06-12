@@ -1,5 +1,6 @@
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
+import Prism from 'prismjs'
 
 const config = {
   baseUrl: process.env.PRISMIC_API_URL,
@@ -34,10 +35,47 @@ export const generatePageData = (documentType, data) => {
         posts: data
       }
     case 'blog_post':
+      let updatedText = PrismicDOM.RichText.asHtml(data.data.post_content)
+        .replace(/&#39;/g, "'")
+        .replace(/&quot;/g, '"')
+
+      let textMatches = []
+
+      updatedText
+        .match(/<pre\sclass="(.*?(?=">))">(.*?(?=<\/pre))<\/pre>/gs)
+        .forEach(match => {
+          const language = match.match(/class="language-(.*?(?=">))"/)[1]
+          const codeText = match.match(
+            new RegExp('(?<=">)(.*)(?=</pre>)', 's')
+          )[1]
+          const formattedText = Prism.highlight(
+            codeText,
+            Prism.languages[language],
+            language
+          )
+
+          let replacement = match
+            .replace(
+              /<pre\sclass="(.*?(?=">))">/,
+              '<pre class="$1"><code class="$1">'
+            )
+            .replace(/<\/pre>/, '</code></pre>')
+            .replace(codeText, formattedText)
+
+          textMatches.push({
+            match,
+            replacement
+          })
+        })
+
+      textMatches.forEach(match => {
+        updatedText = updatedText.replace(match.match, match.replacement)
+      })
+
       return {
         post_date: data.first_publication_date,
         post_title: PrismicDOM.RichText.asText(data.data.post_title),
-        post_content: PrismicDOM.RichText.asHtml(data.data.post_content)
+        post_content: updatedText
       }
   }
 }
