@@ -10,7 +10,6 @@
 
 <script>
 import DateTimeStamp from '../../../components/DateTimeStamp.vue'
-import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
 
 export default {
