@@ -6,7 +6,7 @@
       </h3>
       <div>
         <date-time-stamp :date="post.first_publication_date"/>
-        <span v-for="tag in post.tags" :key="tag" class="blog-post-tag">{{ tag }}</span>
+        <span v-for="tag in post.tags.sort()" :key="tag" class="blog-post-tag">{{ tag }}</span>
       </div>
       <p>{{ previewText }}</p>
     </div>

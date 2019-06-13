@@ -40,10 +40,11 @@ export const generatePageData = (documentType, data) => {
         .replace(/&quot;/g, '"')
 
       let textMatches = []
-
-      updatedText
-        .match(/<pre\sclass="(.*?(?=">))">(.*?(?=<\/pre))<\/pre>/gs)
-        .forEach(match => {
+      const updatedTextMatches = updatedText.match(
+        /<pre\sclass="(.*?(?=">))">(.*?(?=<\/pre))<\/pre>/gs
+      )
+      if (updatedTextMatches) {
+        updatedTextMatches.forEach(match => {
           const language = match.match(/class="language-(.*?(?=">))"/)[1]
           const codeText = match.match(
             new RegExp('(?<=">)(.*)(?=</pre>)', 's')
@@ -68,12 +69,14 @@ export const generatePageData = (documentType, data) => {
           })
         })
 
-      textMatches.forEach(match => {
-        updatedText = updatedText.replace(match.match, match.replacement)
-      })
+        textMatches.forEach(match => {
+          updatedText = updatedText.replace(match.match, match.replacement)
+        })
+      }
 
       return {
         post_date: data.first_publication_date,
+        post_tldr: data.data.post_tldr,
         post_title: PrismicDOM.RichText.asText(data.data.post_title),
         post_content: updatedText
       }

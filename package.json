@@ -1,12 +1,13 @@
 {
-  "name": "jack-barry.github.io",
+  "name": "devdad.life",
   "version": "1.0.0",
   "description": "My personal blog",
   "author": "Jack Barry",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jack-Barry/Jack-Barry.github.io"
+    "url": "https://github.com/Jack-Barry/devdad.life"
   },
+  "homepage": "https://devdad.life",
   "private": true,
   "scripts": {
     "dev": "nuxt",

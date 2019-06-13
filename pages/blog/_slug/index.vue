@@ -14,6 +14,18 @@ import { queryForDocType, generatePageData } from '@/prismic.config'
 
 export default {
   components: { DateTimeStamp },
+  head() {
+    return {
+      title: this.post_title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.post_tldr
+        }
+      ]
+    }
+  },
   async asyncData({ payload, params }) {
     let pageData
 

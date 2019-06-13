@@ -13,6 +13,19 @@ import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
 
 export default {
+  head() {
+    return {
+      title: 'About',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'A little bit about who Jack Barry is and what makes him tick'
+        }
+      ]
+    }
+  },
   async asyncData({ payload }) {
     let pageData
 

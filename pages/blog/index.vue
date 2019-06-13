@@ -16,6 +16,19 @@ import BlogPreview from '../../components/BlogPreview.vue'
 
 export default {
   components: { BlogPreview },
+  head() {
+    return {
+      title: 'Blog',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'A personal blog by Jack Barry about seeking Jesus, dadding/husbanding, and dev life'
+        }
+      ]
+    }
+  },
   async asyncData({ payload }) {
     let pageData
 

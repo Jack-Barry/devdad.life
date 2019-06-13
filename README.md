@@ -1,10 +1,10 @@
-# jack-barry.github.io
+# devdad.life
 
 > My personal blog
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
