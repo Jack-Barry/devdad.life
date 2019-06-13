@@ -24,7 +24,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'A personal blog by Jack Barry about seeking Jesus, dadding/husbanding, and dev life'
+            'A personal blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
         }
       ]
     }
