@@ -2,6 +2,8 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 import pkg from './package'
 import Prismic from 'prismic-javascript'
 import { queryForDocType } from './prismic.config'
+import MomentTimezoneDataPlugin from 'moment-timezone-data-webpack-plugin'
+import MomentLocalesPlugin from 'moment-locales-webpack-plugin'
 
 export default {
   mode: 'universal',
@@ -52,7 +54,17 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.plugins.push(
+        new MomentTimezoneDataPlugin({
+          matchZones: 'America/Chicago',
+          startYear: 2010,
+          endYear: new Date().getFullYear() + 1
+        })
+      )
+
+      config.plugins.push(new MomentLocalesPlugin())
+    }
   },
 
   generate: {
