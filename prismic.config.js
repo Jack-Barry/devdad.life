@@ -45,10 +45,11 @@ export const generatePageData = (documentType, data) => {
       )
       if (updatedTextMatches) {
         updatedTextMatches.forEach(match => {
+          console.log(match)
           const language = match.match(/class="language-(.*?(?=">))"/)[1]
           const codeText = match.match(
-            new RegExp('(?<=">)(.*)(?=</pre>)', 's')
-          )[1]
+            new RegExp('(">)(.*)(?=<\/pre>)', 's')
+          )[2]
           const formattedText = Prism.highlight(
             codeText,
             Prism.languages[language],
