@@ -1,5 +1,7 @@
 # devdad.life
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/03718fc3-6785-458a-a8f0-919b3f3dde29/deploy-status)](https://app.netlify.com/sites/jack-barry/deploys)
+
 > My personal blog
 
 ## Build Setup
