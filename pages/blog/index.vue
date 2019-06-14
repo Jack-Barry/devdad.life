@@ -33,7 +33,7 @@ export default {
     let pageData
 
     if (payload) {
-      pageData = payload.data
+      pageData = payload
     } else {
       const apiData = await queryForDocType('blog_post')
       pageData = apiData.results

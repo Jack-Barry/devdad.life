@@ -6,7 +6,7 @@
       </h3>
       <div>
         <date-time-stamp :date="post.first_publication_date"/>
-        <span v-for="tag in post.tags.sort()" :key="tag" class="blog-post-tag">{{ tag }}</span>
+        <span v-for="tag in sortedTags" :key="tag" class="blog-post-tag">{{ tag }}</span>
       </div>
       <p>{{ previewText }}</p>
     </div>
@@ -36,6 +36,9 @@ export default {
         this.$props.post.data.post_content
       )
       return `${text.substr(0, text.lastIndexOf(' ', 200))}...`
+    },
+    sortedTags() {
+      return this.$props.post.tags.sort()
     }
   }
 }
