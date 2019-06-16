@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
-import { prismifyBlogPost } from './helpers/formatting'
+import { prismify } from './helpers/formatting'
 
 const config = {
   baseUrl: process.env.PRISMIC_API_URL,
@@ -39,9 +39,7 @@ export const generatePageData = (documentType, data) => {
         post_date: data.first_publication_date,
         post_tldr: data.data.post_tldr,
         post_title: PrismicDOM.RichText.asText(data.data.post_title),
-        post_content: prismifyBlogPost(
-          PrismicDOM.RichText.asHtml(data.data.post_content)
-        )
+        post_content: prismify(data.data.post_content)
       }
   }
 }

@@ -3,7 +3,7 @@
     <header>
       <h1>Blog</h1>
     </header>
-    <div v-for="(post, index) in posts" :key="index">
+    <div v-for="(post, index) in orderedPosts" :key="index">
       <blog-preview :post="post"/>
     </div>
   </main>
@@ -39,6 +39,16 @@ export default {
       pageData = apiData.results
     }
     return generatePageData('blog_page', pageData)
+  },
+  computed: {
+    orderedPosts() {
+      return this.posts.sort((a, b) =>
+        new Date(a.first_publication_date).getTime() >
+        new Date(b.first_publication_date).getTime()
+          ? -1
+          : 1
+      )
+    }
   }
 }
 </script>

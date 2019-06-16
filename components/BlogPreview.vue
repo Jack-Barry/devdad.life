@@ -8,7 +8,10 @@
         <date-time-stamp :date="post.first_publication_date"/>
         <span v-for="tag in sortedTags" :key="tag" class="blog-post-tag">{{ tag }}</span>
       </div>
-      <p>{{ previewText }}</p>
+      <p>
+        {{ previewText }}
+        <nuxt-link :to="`/blog/${post.uid}`">Read More</nuxt-link>
+      </p>
     </div>
   </div>
 </template>
@@ -35,7 +38,7 @@ export default {
       const text = PrismicDOM.RichText.asText(
         this.$props.post.data.post_content
       )
-      return `${text.substr(0, text.lastIndexOf(' ', 200))}...`
+      return `${text.substr(0, text.lastIndexOf(' ', 190))}...`
     },
     sortedTags() {
       return this.$props.post.tags.sort()
@@ -60,11 +63,16 @@ export default {
   h3 {
     margin-bottom: 1rem;
   }
+
+  p {
+    line-height: 1.5em;
+  }
 }
 
 .blog-post-tag {
   display: inline-block;
   padding: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 0.75rem;
   background-color: $pale-gray;
   border-radius: 2em;
