@@ -60,27 +60,6 @@ main {
   padding: 3rem 0 0;
 }
 
-.page-content {
-  padding: 0 1.5rem 6rem;
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-align: center;
-    margin-bottom: 1em;
-  }
-
-  p,
-  ul,
-  pre[class*='language-'] {
-    max-width: 45rem;
-    margin: auto;
-    margin-bottom: 1.5rem;
-  }
-}
-
 p,
 ul,
 ol {
@@ -92,4 +71,25 @@ ol {
   background-color: $pale-gray;
   padding: 0.3rem;
   border-radius: 0.35rem;
+}
+
+.page-content {
+  padding: 0 1.5rem 6rem;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}
+.page-content p,
+.page-content ul,
+.page-content pre[class*='language-'],
+.comments {
+  max-width: 45rem;
+  margin: auto;
+  margin-bottom: 1.5rem;
 }

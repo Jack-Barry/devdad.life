@@ -31,6 +31,7 @@ export const generatePageData = (documentType, data) => {
       }
     case 'blog_post':
       return {
+        site_root_url: process.env.SITE_ROOT_URL,
         disqus_shortname: process.env.DISQUS_SHORTNAME,
         post_uid: data.data.uid,
         post_date: data.first_publication_date,

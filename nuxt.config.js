@@ -9,6 +9,7 @@ export default {
   mode: 'universal',
 
   env: {
+    SITE_ROOT_URL: process.env.SITE_ROOT_URL,
     DISQUS_SHORTNAME: process.env.DISQUS_SHORTNAME,
     PRISMIC_API_URL: process.env.PRISMIC_API_URL,
     PRISMIC_API_KEY: process.env.PRISMIC_API_KEY
