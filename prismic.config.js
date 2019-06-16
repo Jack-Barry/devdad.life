@@ -2,14 +2,9 @@ import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import { prismify } from './helpers/formatting'
 
-const config = {
-  baseUrl: process.env.PRISMIC_API_URL,
-  access_token: process.env.PRISMIC_API_KEY
-}
-
 export const initApi = req => {
-  return Prismic.getApi(config.baseUrl, {
-    accessToken: config.access_token,
+  return Prismic.getApi(process.env.PRISMIC_API_URL, {
+    accessToken: process.env.PRISMIC_API_KEY,
     req: req
   })
 }
@@ -36,6 +31,8 @@ export const generatePageData = (documentType, data) => {
       }
     case 'blog_post':
       return {
+        disqus_shortname: process.env.DISQUS_SHORTNAME,
+        post_uid: data.data.uid,
         post_date: data.first_publication_date,
         post_tldr: data.data.post_tldr,
         post_title: PrismicDOM.RichText.asText(data.data.post_title),

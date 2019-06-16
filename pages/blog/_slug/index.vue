@@ -5,6 +5,9 @@
       <date-time-stamp :date="post_date"/>
     </header>
     <section class="page-content" v-html="post_content"></section>
+    <div class="comments">
+      <vue-disqus :shortname="disqus_shortname" :identifier="post_uid" :url="$nuxt.$route.path"></vue-disqus>
+    </div>
   </main>
 </template>
 

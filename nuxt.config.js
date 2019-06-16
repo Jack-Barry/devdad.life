@@ -9,6 +9,7 @@ export default {
   mode: 'universal',
 
   env: {
+    DISQUS_SHORTNAME: process.env.DISQUS_SHORTNAME,
     PRISMIC_API_URL: process.env.PRISMIC_API_URL,
     PRISMIC_API_KEY: process.env.PRISMIC_API_KEY
   },
@@ -40,7 +41,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/prism'],
+  plugins: ['~plugins/prism', '~/plugins/disqus'],
 
   /*
    ** Nuxt.js modules
