@@ -14,7 +14,7 @@ export const prismify = data => {
       const codeLanguage = docSection.label.replace('language-', '')
       richText = richText.replace(
         toReplace[replaceIndex],
-        `<pre class="language-${codeLanguage}"><code class="language-${codeLanguage}>` +
+        `<pre class="language-${codeLanguage}"><code class="language-${codeLanguage}">` +
           Prism.highlight(
             docSection.text,
             Prism.languages[codeLanguage],

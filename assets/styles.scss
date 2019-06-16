@@ -62,8 +62,23 @@ main {
 
 .page-content {
   padding: 0 1.5rem 6rem;
-  margin: auto;
-  max-width: 45rem;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  p,
+  ul,
+  pre[class*='language-'] {
+    max-width: 45rem;
+    margin: auto;
+    margin-bottom: 1.5rem;
+  }
 }
 
 p,
