@@ -42,7 +42,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/prism', '~/plugins/disqus'],
+  plugins: [
+    '~plugins/prism',
+    '~/plugins/disqus',
+    { src: '~plugins/google-analytics', ssr: false }
+  ],
 
   /*
    ** Nuxt.js modules
