@@ -51,7 +51,14 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [['@nuxtjs/dotenv', { systemvars: true }]],
+  modules: [['@nuxtjs/dotenv', { systemvars: true }], '@nuxtjs/sitemap'],
+
+  /*
+   ** Sitemap
+   */
+  sitemap: {
+    hostname: process.env.SITE_ROOT_URL
+  },
 
   /*
    ** Build configuration

@@ -14,9 +14,11 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "devgen": "NODE_ENV=development npm run generate",
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.0.1",
     "cross-env": "^5.2.0",
     "moment-timezone": "^0.5.25",
     "nuxt": "^2.4.0",
