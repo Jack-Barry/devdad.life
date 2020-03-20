@@ -54,6 +54,11 @@ h6 {
 header {
   padding: 4.5rem 0;
   text-align: center;
+
+  h1 {
+    max-width: 55rem;
+    margin: auto;
+  }
 }
 
 main {
@@ -76,11 +81,6 @@ ol {
 .page-content {
   padding: 0 1.5rem 6rem;
 
-  h1 {
-    max-width: 55rem;
-    margin: auto;
-  }
-
   h2,
   h3,
   h4,
@@ -91,10 +91,8 @@ ol {
     margin: auto auto 1em;
   }
 
-  p {
-    img: {
-      width: 100%;
-    }
+  p img {
+    width: 100%;
   }
 }
 
