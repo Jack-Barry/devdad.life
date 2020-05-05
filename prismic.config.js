@@ -36,6 +36,7 @@ export const generatePageData = (documentType, data) => {
         post_uid: data.data.uid,
         post_date: data.first_publication_date,
         post_tldr: data.data.post_tldr,
+        post_social_media_image: data.data.social_media_image,
         post_title: PrismicDOM.RichText.asText(data.data.post_title),
         post_content: prismify(data.data.post_content)
       }

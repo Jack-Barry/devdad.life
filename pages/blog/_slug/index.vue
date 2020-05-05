@@ -18,6 +18,7 @@
 <script>
 import DateTimeStamp from '../../../components/DateTimeStamp.vue'
 import { queryForDocType, generatePageData } from '@/prismic.config'
+import constants from '@/helpers/constants'
 
 export default {
   components: { DateTimeStamp },
@@ -29,6 +30,22 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.post_tldr
+        },
+        {
+          property: 'og:title',
+          content: this.post_title
+        },
+        {
+          property: 'og:description',
+          content: this.post_tldr
+        },
+        {
+          property: 'og:image',
+          content: this.post_social_media_image || constants.socialMediaImageUrl
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         }
       ]
     }

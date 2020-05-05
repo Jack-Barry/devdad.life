@@ -11,6 +11,7 @@
 <script>
 import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
+import constants from '@/helpers/constants'
 
 export default {
   head() {
@@ -24,7 +25,7 @@ export default {
         },
         {
           property: 'og:title',
-          content: "Jack Barry's personal blog"
+          content: "Jack Barry's Personal Blog"
         },
         {
           property: 'og:description',
@@ -32,12 +33,7 @@ export default {
         },
         {
           property: 'og:image',
-          content:
-            'https://jack-barry-public.s3.us-east-2.amazonaws.com/devdad-images/Social+Media+Logo.png'
-        },
-        {
-          property: 'og:url',
-          content: 'https://devdad.life'
+          content: constants.socialMediaImageUrl
         },
         {
           name: 'twitter:card',
