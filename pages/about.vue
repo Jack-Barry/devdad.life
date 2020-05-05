@@ -4,7 +4,7 @@
       <h1>Who is Jack Barry?</h1>
       <p>(According to Jack Barry)</p>
     </header>
-    <section class="page-content" v-html="page_content"/>
+    <section class="page-content" v-html="page_content" />
   </main>
 </template>
 
@@ -22,6 +22,28 @@ export default {
           name: 'description',
           content:
             'A little bit about who Jack Barry is and what makes him tick'
+        },
+        {
+          property: 'og:title',
+          content:
+            'A little bit about who Jack Barry is and what makes him tick'
+        },
+        {
+          property: 'og:description',
+          content: 'About Jack Barry'
+        },
+        {
+          property: 'og:image',
+          content:
+            'https://jack-barry-public.s3.us-east-2.amazonaws.com/devdad-images/Social+Media+Logo.png'
+        },
+        {
+          property: 'og:url',
+          content: 'https://devdad.life/about'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         }
       ]
     }

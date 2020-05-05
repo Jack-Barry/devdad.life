@@ -2,7 +2,7 @@
   <main>
     <header>
       <h1>{{ post_title }}</h1>
-      <date-time-stamp :date="post_date"/>
+      <date-time-stamp :date="post_date" />
     </header>
     <section class="page-content" v-html="post_content"></section>
     <div class="comments">
