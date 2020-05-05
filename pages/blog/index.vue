@@ -12,6 +12,7 @@
 <script>
 import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
+import constants from '@/helpers/constants'
 import BlogPreview from '../../components/BlogPreview.vue'
 
 export default {
@@ -28,21 +29,16 @@ export default {
         },
         {
           property: 'og:title',
+          content: 'Blog Posts by Jack Barry'
+        },
+        {
+          property: 'og:description',
           content:
             'A personal blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
         },
         {
-          property: 'og:description',
-          content: 'Blog posts by Jack Barry'
-        },
-        {
           property: 'og:image',
-          content:
-            'https://jack-barry-public.s3.us-east-2.amazonaws.com/devdad-images/Social+Media+Logo.png'
-        },
-        {
-          property: 'og:url',
-          content: 'https://devdad.life/blog'
+          content: constants.socialMediaImageUrl
         },
         {
           name: 'twitter:card',
