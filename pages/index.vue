@@ -20,7 +20,28 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Jack Barry's personal blog, online resumé, and other stuff"
+          content: "Jack Barry's personal blog"
+        },
+        {
+          property: 'og:title',
+          content: "Jack Barry's personal blog"
+        },
+        {
+          property: 'og:description',
+          content: 'Thoughts on various topics by Jack Barry'
+        },
+        {
+          property: 'og:image',
+          content:
+            'https://jack-barry-public.s3.us-east-2.amazonaws.com/devdad-images/Social+Media+Logo.png'
+        },
+        {
+          property: 'og:url',
+          content: 'https://devdad.life'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         }
       ]
     }
