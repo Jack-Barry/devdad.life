@@ -61,8 +61,8 @@ export default {
   computed: {
     orderedPosts() {
       return this.posts.sort((a, b) =>
-        new Date(a.first_publication_date).getTime() >
-        new Date(b.first_publication_date).getTime()
+        Date.parse(a.first_publication_date.split('+')[0]) >
+        Date.parse(b.first_publication_date.split('+')[0])
           ? -1
           : 1
       )
