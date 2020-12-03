@@ -11,35 +11,13 @@
 <script>
 import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
-import constants from '@/helpers/constants'
+import makeMetaTags from '@/helpers/makeMetaTags'
 
 export default {
   head() {
     return {
       title: 'About',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'A little bit about Jack Barry'
-        },
-        {
-          property: 'og:title',
-          content: 'About Jack Barry'
-        },
-        {
-          property: 'og:description',
-          content: 'A little bit about Jack Barry'
-        },
-        {
-          property: 'og:image',
-          content: constants.socialMediaImageUrl
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        }
-      ]
+      meta: makeMetaTags('About Jack Barry', 'A little bit about Jack Barry')
     }
   },
   async asyncData({ payload }) {
