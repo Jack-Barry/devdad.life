@@ -23,7 +23,6 @@ import makeMetaTags from '@/helpers/makeMetaTags'
 export default {
   components: { DateTimeStamp },
   head() {
-    console.log(this.post_social_media_image)
     return {
       title: this.post_title,
       meta: makeMetaTags(
