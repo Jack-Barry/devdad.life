@@ -12,7 +12,7 @@
 <script>
 import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
-import constants from '@/helpers/constants'
+import makeMetaTags from '@/helpers/makeMetaTags'
 import BlogPreview from '../../components/BlogPreview.vue'
 
 export default {
@@ -20,31 +20,10 @@ export default {
   head() {
     return {
       title: 'Blog',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'A personal blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
-        },
-        {
-          property: 'og:title',
-          content: 'Blog Posts by Jack Barry'
-        },
-        {
-          property: 'og:description',
-          content:
-            'A personal blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
-        },
-        {
-          property: 'og:image',
-          content: constants.socialMediaImageUrl
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        }
-      ]
+      meta: makeMetaTags(
+        'Blog Posts by Jack Barry',
+        'A personal blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
+      )
     }
   },
   async asyncData({ payload }) {

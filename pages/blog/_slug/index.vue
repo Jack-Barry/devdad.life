@@ -18,36 +18,19 @@
 <script>
 import DateTimeStamp from '../../../components/DateTimeStamp.vue'
 import { queryForDocType, generatePageData } from '@/prismic.config'
-import constants from '@/helpers/constants'
+import makeMetaTags from '@/helpers/makeMetaTags'
 
 export default {
   components: { DateTimeStamp },
   head() {
+    console.log(this.post_social_media_image)
     return {
       title: this.post_title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.post_tldr
-        },
-        {
-          property: 'og:title',
-          content: this.post_title
-        },
-        {
-          property: 'og:description',
-          content: this.post_tldr
-        },
-        {
-          property: 'og:image',
-          content: this.post_social_media_image || constants.socialMediaImageUrl
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        }
-      ]
+      meta: makeMetaTags(
+        this.post_title,
+        this.post_tldr,
+        this.post_social_media_image
+      )
     }
   },
   async asyncData({ payload, params }) {
