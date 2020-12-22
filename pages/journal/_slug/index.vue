@@ -52,7 +52,7 @@ export default {
 
     previewText() {
       const text = PrismicDOM.RichText.asText(this._data.focus)
-      return `${text.substr(0, text.lastIndexOf(' ', 190))}...`
+      return `${text.substr(0, text.lastIndexOf(' ', 60))}...`
     },
   },
 
