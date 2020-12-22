@@ -22,8 +22,8 @@ export default {
       title: 'Blog',
       meta: makeMetaTags(
         'Blog Posts by Jack Barry',
-        'A personal blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
-      )
+        'A blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
+      ),
     }
   },
   async asyncData({ payload }) {
@@ -35,7 +35,7 @@ export default {
       const apiData = await queryForDocType('blog_post')
       pageData = apiData.results
     }
-    return generatePageData('blog_page', pageData)
+    return generatePageData('blog_index', pageData)
   },
   computed: {
     orderedPosts() {
@@ -45,7 +45,7 @@ export default {
           ? -1
           : 1
       )
-    }
-  }
+    },
+  },
 }
 </script>
