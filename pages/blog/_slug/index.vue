@@ -6,11 +6,11 @@
     </header>
     <section class="page-content" v-html="post_content"></section>
     <div class="comments">
-      <vue-disqus
+      <Disqus
         :shortname="disqus_shortname"
         :identifier="post_uid"
         :url="`${site_root_url}/${$nuxt.$route.path}`"
-      ></vue-disqus>
+      />
     </div>
   </main>
 </template>
@@ -29,7 +29,7 @@ export default {
         this.post_title,
         this.post_tldr,
         this.post_social_media_image
-      )
+      ),
     }
   },
   async asyncData({ payload, params }) {
@@ -42,6 +42,6 @@ export default {
       pageData = apiData.results[0]
     }
     return generatePageData('blog_post', pageData)
-  }
+  },
 }
 </script>
