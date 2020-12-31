@@ -32,7 +32,7 @@ import PrismicDOM from 'prismic-dom'
 
 export default {
   head() {
-    const title = `Journal Entry ${this.first_publication_date}`
+    const title = `Journal Entry for ${this.journalDate}`
     return {
       title,
       meta: makeMetaTags(title, this.previewText),
