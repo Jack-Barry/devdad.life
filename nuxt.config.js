@@ -98,7 +98,7 @@ export default {
 
       const journalEntries = journalEntriesData.results.map((payload) => {
         return {
-          route: `/journal/${payload.id}`,
+          route: `/journal/${payload.data.date}`,
           payload,
         }
       })
