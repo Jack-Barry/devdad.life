@@ -46,6 +46,9 @@ export const generatePageData = (documentType, data) => {
       }
     case 'journal_entry':
       return {
+        emphasis_on_others: PrismicDOM.RichText.asHtml(
+          data.data.emphasis_on_others
+        ),
         entry_date: data.data.date,
         focus: data.data.focus,
         gratitude_list: PrismicDOM.RichText.asHtml(data.data.gratitude_list),

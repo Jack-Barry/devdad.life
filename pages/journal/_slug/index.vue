@@ -9,6 +9,14 @@
       <h3>Things I'm Grateful For</h3>
       <div v-html="gratitude_list" />
     </section>
+    <section
+      v-if="emphasis_on_others"
+      class="page-content"
+      id="emphasis-on-others"
+    >
+      <h3>People Who I Admire</h3>
+      <div v-html="emphasis_on_others" />
+    </section>
     <section class="page-content" id="target">
       <h3>Who Do I Want to Be?</h3>
       <div v-html="target" />
@@ -62,7 +70,10 @@ export default {
     if (payload) {
       pageData = payload
     } else {
-      const apiData = await queryForDocType(params.slug, 'document.id')
+      const apiData = await queryForDocType(
+        new Date(params.slug),
+        'my.journal_entry.date'
+      )
       pageData = apiData.results[0]
     }
 

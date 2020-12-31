@@ -5,7 +5,7 @@
     </header>
     <div class="journal-index-links-wrapper">
       <div v-for="(entry, index) in orderedEntries" :key="index">
-        <nuxt-link :to="`/journal/${entry.id}`">
+        <nuxt-link :to="`/journal/${entry.data.date}`">
           <span>{{ entry.data.date }}</span>
         </nuxt-link>
       </div>
