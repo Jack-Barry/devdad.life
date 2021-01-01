@@ -22,7 +22,7 @@
     "cross-env": "^7.0.3",
     "moment-timezone": "^0.5.32",
     "nuxt": "^2.14.12",
-    "prismjs": "^1.22.0",
+    "prismjs": "^1.23.0",
     "vue-disqus": "^4.0.1"
   },
   "devDependencies": {
