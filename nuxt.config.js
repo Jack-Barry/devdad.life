@@ -15,7 +15,6 @@ export default {
    ** Headers of the page
    */
   head: {
-    htmlAttrs: { prefix: 'og: http://ogp.me/ns#' },
     title: 'Dadding and Deving',
     titleTemplate: 'DevDad | %s',
     meta: [
