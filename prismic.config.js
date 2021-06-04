@@ -19,7 +19,7 @@ export const generatePageData = (documentType, data) => {
   switch (documentType) {
     case 'home_page':
       return {
-        welcome_message: PrismicDOM.RichText.asText(data.welcome_message),
+        welcome_message: PrismicDOM.RichText.asHtml(data.welcome_message),
       }
     case 'about_page':
       return {

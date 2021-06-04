@@ -1,9 +1,7 @@
 <template>
   <main>
     <div class="full-screen">
-      <header>
-        <h1>{{ welcome_message }}</h1>
-      </header>
+      <header v-html="welcome_message"></header>
     </div>
   </main>
 </template>
@@ -20,7 +18,7 @@ export default {
       meta: makeMetaTags(
         "Jack Barry's Personal Blog",
         'Thoughts on various topics by Jack Barry'
-      )
+      ),
     }
   },
   async asyncData({ payload }) {
@@ -33,7 +31,7 @@ export default {
       pageData = apiData.results[0].data
     }
     return generatePageData('home_page', pageData)
-  }
+  },
 }
 </script>
 
