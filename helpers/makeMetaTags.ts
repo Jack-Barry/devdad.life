@@ -10,6 +10,11 @@ export default function (
 
   return [
     {
+      prefix: 'og: http://ogp.me/ns#',
+      property: 'og:image',
+      content: imageUrl,
+    },
+    {
       hid: 'description',
       name: 'description',
       content: description,
@@ -22,11 +27,6 @@ export default function (
     {
       property: 'og:title',
       content: title,
-    },
-    {
-      prefix: 'og: http://ogp.me/ns#',
-      property: 'og:image',
-      content: imageUrl,
     },
     {
       property: 'og:site_name',
