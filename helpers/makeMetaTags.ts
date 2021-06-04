@@ -28,8 +28,8 @@ export default function (
       content: description,
     },
     {
+      prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
-      name: 'image',
       content: imageUrl,
     },
     {
