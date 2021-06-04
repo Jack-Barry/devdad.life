@@ -24,6 +24,7 @@ export default function (
       content: title,
     },
     {
+      prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
       content: imageUrl,
     },
