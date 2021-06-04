@@ -1,6 +1,4 @@
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
-import pkg from './package'
-import Prismic from 'prismic-javascript'
 import { queryForDocType } from './prismic.config'
 import MomentTimezoneDataPlugin from 'moment-timezone-data-webpack-plugin'
 import MomentLocalesPlugin from 'moment-locales-webpack-plugin'
@@ -81,6 +79,8 @@ export default {
       config.plugins.push(new MomentLocalesPlugin())
     },
   },
+
+  buildModules: ['@nuxt/typescript-build'],
 
   generate: {
     routes: async function () {
