@@ -24,13 +24,8 @@ export default function (
       content: title,
     },
     {
-      property: 'og:description',
-      content: description,
-    },
-    {
-      prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
-      content: `${imageUrl}?1`,
+      content: imageUrl,
     },
     {
       property: 'og:site_name',
