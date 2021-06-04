@@ -30,7 +30,7 @@ export default function (
     {
       prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
-      content: imageUrl,
+      content: `${imageUrl}?1`,
     },
     {
       property: 'og:site_name',

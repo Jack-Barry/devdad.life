@@ -4,6 +4,8 @@ import MomentTimezoneDataPlugin from 'moment-timezone-data-webpack-plugin'
 import MomentLocalesPlugin from 'moment-locales-webpack-plugin'
 
 export default {
+  target: 'static',
+
   env: {
     SITE_ROOT_URL: process.env.SITE_ROOT_URL,
     DISQUS_SHORTNAME: process.env.DISQUS_SHORTNAME,
