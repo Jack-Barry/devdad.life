@@ -1,7 +1,7 @@
 import PrismicDOM from 'prismic-dom'
 import Prism from 'prismjs'
 
-export const prismify = data => {
+export const prismify = (data: any) => {
   let richText = PrismicDOM.RichText.asHtml(data)
   const toReplace = richText.match(
     /<pre\sclass="language-(?:\w*)">(.*?(?=<\/pre>))<\/pre>/gs
@@ -9,7 +9,9 @@ export const prismify = data => {
 
   let replaceIndex = 0
 
-  data.forEach(docSection => {
+  if (!toReplace) return richText
+
+  data.forEach((docSection: any) => {
     if (docSection.type === 'preformatted') {
       const codeLanguage = docSection.label.replace('language-', '')
       richText = richText.replace(
@@ -25,5 +27,6 @@ export const prismify = data => {
       replaceIndex++
     }
   })
+
   return richText
 }
