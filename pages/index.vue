@@ -18,7 +18,7 @@ export default {
       meta: makeMetaTags(
         "Jack Barry's Personal Blog",
         'Thoughts on various topics by Jack Barry'
-      ),
+      )
     }
   },
   async asyncData({ payload }) {
@@ -31,7 +31,7 @@ export default {
       pageData = apiData.results[0].data
     }
     return generatePageData('home_page', pageData)
-  },
+  }
 }
 </script>
 

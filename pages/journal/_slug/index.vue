@@ -43,7 +43,7 @@ export default {
     const title = `Journal Entry for ${this.journalDate}`
     return {
       title,
-      meta: makeMetaTags(title, this.previewText),
+      meta: makeMetaTags(title, this.previewText)
     }
   },
 
@@ -61,7 +61,7 @@ export default {
     previewText() {
       const text = PrismicDOM.RichText.asText(this._data.focus)
       return `${text.substr(0, text.lastIndexOf(' ', 60))}...`
-    },
+    }
   },
 
   async asyncData({ payload, params }) {
@@ -78,6 +78,6 @@ export default {
     }
 
     return generatePageData('journal_entry', pageData)
-  },
+  }
 }
 </script>

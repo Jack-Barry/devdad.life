@@ -2,11 +2,15 @@
   <div class="blog-post-preview-wrapper">
     <div class="blog-post-preview">
       <h3>
-        <nuxt-link :to="`/blog/${post.uid}`">{{ Dom.RichText.asText(post.data.post_title) }}</nuxt-link>
+        <nuxt-link :to="`/blog/${post.uid}`">{{
+          Dom.RichText.asText(post.data.post_title)
+        }}</nuxt-link>
       </h3>
       <div>
-        <date-time-stamp :date="post.first_publication_date"/>
-        <span v-for="tag in sortedTags" :key="tag" class="blog-post-tag">{{ tag }}</span>
+        <date-time-stamp :date="post.first_publication_date" />
+        <span v-for="tag in sortedTags" :key="tag" class="blog-post-tag">{{
+          tag
+        }}</span>
       </div>
       <p>
         {{ previewText }}

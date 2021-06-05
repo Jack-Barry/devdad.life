@@ -27,7 +27,7 @@ export default {
       meta: makeMetaTags(
         'Journal Entries by Jack Barry',
         'A personal journal by Jack Barry to assist to live with focus, clarity and purpose for every day'
-      ),
+      )
     }
   },
 
@@ -52,8 +52,8 @@ export default {
           ? -1
           : 1
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

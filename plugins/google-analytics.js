@@ -4,15 +4,15 @@ export default ({ app }) => {
   /*
    ** Only run on client-side and only in production mode
    */
-  if (process.env.NODE_ENV !== 'production') return
-  /*
-   ** Include Google Analytics Script
-   */
-  ;(function(i, s, o, g, r, a, m) {
+  if (process.env.NODE_ENV !== 'production')
+    return /*
+     ** Include Google Analytics Script
+     */
+  ;(function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r
     ;(i[r] =
       i[r] ||
-      function() {
+      function () {
         ;(i[r].q = i[r].q || []).push(arguments)
       }),
       (i[r].l = 1 * new Date())
