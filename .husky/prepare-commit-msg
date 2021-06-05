@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -z "$RUNNING_IN_CI" ]; then
+  . "$(dirname "$0")/_/husky.sh"
+
+  exec < /dev/tty && npx cz --hook || true
+fi
