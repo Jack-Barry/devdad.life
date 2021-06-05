@@ -23,9 +23,10 @@ export default {
       meta: makeMetaTags(
         'Blog Posts by Jack Barry',
         'A blog by Jack Barry about seeking Jesus, dadding, husbanding, and dev life'
-      ),
+      )
     }
   },
+
   async asyncData({ payload }) {
     let pageData
 
@@ -37,6 +38,7 @@ export default {
     }
     return generatePageData('blog_index', pageData)
   },
+
   computed: {
     orderedPosts() {
       return this.posts.sort((a, b) =>
@@ -45,7 +47,7 @@ export default {
           ? -1
           : 1
       )
-    },
-  },
+    }
+  }
 }
 </script>

@@ -12,42 +12,42 @@ export default function (
     {
       prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
-      content: imageUrl,
+      content: imageUrl
     },
     {
       hid: 'description',
       name: 'description',
-      content: description,
+      content: description
     },
     {
       name: 'author',
-      content: 'Jack Barry',
+      content: 'Jack Barry'
     },
     // Facebook
     {
       property: 'og:title',
-      content: title,
+      content: title
     },
     {
       property: 'og:site_name',
-      content: 'DevDad.life',
+      content: 'DevDad.life'
     },
     // Twitter
     {
       name: 'twitter:card',
-      content: 'summary_large_image',
+      content: 'summary_large_image'
     },
     {
       property: 'twitter:title',
-      content: title,
+      content: title
     },
     {
       property: 'twitter:description',
-      content: description,
+      content: description
     },
     {
       name: 'twitter:image',
-      content: imageUrl,
-    },
+      content: imageUrl
+    }
   ]
 }

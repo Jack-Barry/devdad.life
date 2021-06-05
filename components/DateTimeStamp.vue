@@ -10,16 +10,16 @@ import moment from 'moment-timezone'
 export default {
   props: {
     date: {
-      type: String,
-    },
+      type: String
+    }
   },
   data() {
     return {
       dateString: moment
         .tz(this.date, 'America/Chicago')
-        .format('dddd, MMMM Do YYYY @ h:mm a z'),
+        .format('dddd, MMMM Do YYYY @ h:mm a z')
     }
-  },
+  }
 }
 </script>
 
