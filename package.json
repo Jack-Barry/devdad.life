@@ -10,13 +10,13 @@
   "homepage": "https://devdad.life",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "dev": "nuxt",
     "devgen": "NODE_ENV=development npm run generate",
-    "test": "jest",
-    "prepare": "husky install"
+    "generate": "nuxt generate",
+    "prepare": "husky install",
+    "start": "nuxt start",
+    "test": "jest"
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
@@ -32,6 +32,8 @@
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@types/prismic-dom": "^2.1.1",
     "@types/prismjs": "^1.16.5",
     "@vue/test-utils": "^1.2.0",
@@ -52,6 +54,7 @@
     "prismic-dom": "^2.2.5",
     "prismic-javascript": "^3.0.2",
     "sass-loader": "^10.1.1",
+    "semantic-release": "^17.4.3",
     "vue-jest": "^3.0.7"
   },
   "config": {
