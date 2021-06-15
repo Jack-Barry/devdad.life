@@ -23,7 +23,7 @@
     "cross-env": "^7.0.3",
     "moment-timezone": "^0.5.33",
     "node-sass": "^5.0.0",
-    "nuxt": "^2.15.6",
+    "nuxt": "^2.15.7",
     "prismjs": "^1.23.0",
     "vue-disqus": "^4.0.1"
   },
