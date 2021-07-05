@@ -24,7 +24,7 @@
     "moment-timezone": "^0.5.33",
     "node-sass": "^6.0.1",
     "nuxt": "^2.15.7",
-    "prismjs": "^1.24.0",
+    "prismjs": "^1.24.1",
     "vue-disqus": "^4.0.1"
   },
   "devDependencies": {
