@@ -51,7 +51,7 @@
     "moment-timezone-data-webpack-plugin": "^1.5.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
-    "prismic-dom": "^2.2.6",
+    "prismic-dom": "^2.2.7",
     "prismic-javascript": "^3.0.2",
     "sass-loader": "^10.1.1",
     "semantic-release": "^18.0.1",
