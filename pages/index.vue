@@ -17,7 +17,7 @@ export default {
       title: 'Home',
       meta: makeMetaTags(
         "Jack Barry's Personal Blog",
-        'Thoughts on various topics by Jack Barry'
+        'Thoughts on various topics such as tech, networking, philosophy, mundane observations, etc. by Jack Barry'
       )
     }
   },

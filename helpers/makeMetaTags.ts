@@ -11,6 +11,7 @@ export default function (
   return [
     {
       property: 'og:image',
+      name: 'image',
       content: imageUrl
     },
     {
