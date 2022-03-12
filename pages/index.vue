@@ -9,6 +9,7 @@
 <script>
 import Prismic from 'prismic-javascript'
 import { queryForDocType, generatePageData } from '@/prismic.config'
+import htmlAttrs from '@/helpers/htmlAttrs'
 import makeMetaTags from '@/helpers/makeMetaTags'
 
 export default {
@@ -18,7 +19,8 @@ export default {
       meta: makeMetaTags(
         "Jack Barry's Personal Blog",
         'Thoughts on various topics such as tech, networking, philosophy, mundane observations, etc. by Jack Barry'
-      )
+      ),
+      htmlAttrs
     }
   },
   async asyncData({ payload }) {
