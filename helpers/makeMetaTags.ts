@@ -10,12 +10,11 @@ export default function (
 
   return [
     {
-      prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
       content: imageUrl
     },
     {
-      hid: 'description',
+      hid: 'og:description',
       name: 'description',
       content: description
     },
