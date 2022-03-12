@@ -12,6 +12,7 @@ export default function (
     {
       prefix: 'og: http://ogp.me/ns#',
       property: 'og:image',
+      name: 'image',
       content: imageUrl
     },
     {
