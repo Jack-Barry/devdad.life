@@ -19,24 +19,28 @@ export default function (
       name: 'image',
       content: imageUrl
     },
+    {
+      property: 'og:image:secure_url',
+      content: imageUrl
+    },
     // {
     //   hid: 'og:description',
     //   name: 'description',
     //   content: description
     // },
-    // {
-    //   name: 'author',
-    //   content: 'Jack Barry'
-    // },
+    {
+      name: 'author',
+      content: 'Jack Barry'
+    },
     // // Facebook
     {
       property: 'og:title',
       content: title
+    },
+    {
+      property: 'og:site_name',
+      content: 'DevDad.life'
     }
-    // {
-    //   property: 'og:site_name',
-    //   content: 'DevDad.life'
-    // },
     // Twitter
     // {
     //   name: 'twitter:card',
